@@ -1,7 +1,6 @@
 #include <iostream>
 using namespace std;
 
-// Function to calculate power
 long long calculatePower(int base, int power)
 {
     long long result = 1;
