@@ -1,0 +1,23 @@
+Book Details: 
+
+ Book 1
+ Title: Hunger Games
+ Autor: Suzanne Collins
+ Year: 2008
+ Stock: 26
+ Price: 2500
+
+ Book 2
+ Title: Hunger Games Catching Fire
+ Autor: Suzanne Collins
+ Year: 2009
+ Stock: 3250
+ Price: 3250
+
+ Book 3
+ Title: Hunger Games Mockingjay
+ Autor: Suzanne Collins
+ Year: 2010
+ Stock: 39
+ Price: 2750
+
