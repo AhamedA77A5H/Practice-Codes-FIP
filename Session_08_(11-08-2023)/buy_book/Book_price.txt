@@ -1,18 +1,18 @@
 Book Details: 
 
  Book 1
+ Title: Harry potter
+ Autor: J.k. Rowlling
+ Year: 1998
+ Stock: 25
+ Price: 1580
+
+ Book 2
  Title: Hunger Games
  Autor: Suzanne Collins
  Year: 2008
- Stock: 25
+ Stock: 35
  Price: 2250
-
- Book 2
- Title: Hunger Games Catching Fire
- Autor: Suzanne Collins
- Year: 2009
- Stock: 32
- Price: 3200
 
  Book 3
  Title: Hunger Games Mockingjay
