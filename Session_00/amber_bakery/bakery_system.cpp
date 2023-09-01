@@ -39,7 +39,7 @@ int main()
             cout << "----------- Welcome Cashier -----------\n";
             break;
         case 3:
-            cout << "----------- Welcome Manager -----------\n";
+            cout << "\n----------- Welcome Manager -----------\n";
             manager_login();
             break;
         default:
@@ -81,7 +81,7 @@ void manager_login()
         int choice;
         do
         {
-            cout << "Manager Menu:" << endl;
+            cout << "\nManager Menu:\n" << endl;
             cout << "1. Add Item" << endl;
             cout << "2. Remove Item" << endl;
             cout << "3. Edit Item" << endl;
