@@ -75,7 +75,9 @@ void manager_login()
         }
         file.close();
     }
+
     void add_manager();
+    
     if (loggedIn)
     {
         cout << "Login successful!" << endl;
