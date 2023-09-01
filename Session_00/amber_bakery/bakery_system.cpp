@@ -77,7 +77,10 @@ void manager_login()
     }
 
     void add_manager();
-    
+    void add_items();
+    void remove_items();
+    void edit_items();
+
     if (loggedIn)
     {
         cout << "Login successful!" << endl;
@@ -96,13 +99,13 @@ void manager_login()
             switch (choice)
             {
                 case 1:
-                    // Add item 
+                    add_items();
                     break;
                 case 2:
-                    // Remove item 
+                    remove_items();
                     break;
                 case 3:
-                    // Edit item 
+                    edit_items();
                     break;
                 case 4:
                     add_manager();
@@ -136,6 +139,122 @@ void add_manager()
         file << newUsername << " " << newPassword << endl;
         file.close();
         cout << "New manager added successfully!" << endl;
+    }
+    else
+    {
+        cout << "Error opening file!" << endl;
+    }
+}
+
+void add_items()
+{
+    Items item;
+    cout << "Enter item name: ";
+    cin >> item.name;
+    cout << "Enter item price: ";
+    cin >> item.price;
+    cout << "Enter item stock: ";
+    cin >> item.stock;
+
+    ofstream file("items.txt", ios::app);
+    if (file.is_open())
+    {
+        file << item.name << " " << item.price << " " << item.stock << endl;
+        file.close();
+        cout << "Item added successfully!" << endl;
+    }
+    else
+    {
+        cout << "Error opening file!" << endl;
+    }
+}
+
+void remove_items()
+{
+    string itemName;
+    cout << "Enter the name of the item to remove: ";
+    cin >> itemName;
+
+    ifstream fileIn("items.txt");
+    ofstream fileOut("temp.txt");
+    if (fileIn.is_open() && fileOut.is_open())
+    {
+        string name;
+        double price;
+        int stock;
+        bool found = false;
+        while (fileIn >> name >> price >> stock)
+        {
+            if (name == itemName)
+            {
+                found = true;
+            }
+            else
+            {
+                fileOut << name << " " << price << " " << stock << endl;
+            }
+        }
+        fileIn.close();
+        fileOut.close();
+
+        if (found)
+        {
+            remove("items.txt");
+            rename("temp.txt", "items.txt");
+            cout << "Item removed successfully!" << endl;
+        }
+        else
+        {
+            remove("temp.txt");
+            cout << "Item not found!" << endl;
+        }
+    }
+    else
+    {
+        cout << "Error opening file!" << endl;
+    }
+}
+
+void edit_items()
+{
+    string itemName;
+    cout << "Enter the name of the item to edit: ";
+    cin >> itemName;
+
+    ifstream fileIn("items.txt");
+    ofstream fileOut("temp.txt");
+    if (fileIn.is_open() && fileOut.is_open())
+    {
+        string name;
+        double price;
+        int stock;
+        bool found = false;
+        while (fileIn >> name >> price >> stock)
+        {
+            if (name == itemName)
+            {
+                found = true;
+                cout << "Enter new item price: ";
+                cin >> price;
+                cout << "Enter new item stock: ";
+                cin >> stock;
+            }
+            fileOut << name << " " << price << " " << stock << endl;
+        }
+        fileIn.close();
+        fileOut.close();
+
+        if (found)
+        {
+            remove("items.txt");
+            rename("temp.txt", "items.txt");
+            cout << "Item edited successfully!" << endl;
+        }
+        else
+        {
+            remove("temp.txt");
+            cout << "Item not found!" << endl;
+        }
     }
     else
     {
