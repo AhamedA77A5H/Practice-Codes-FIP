@@ -1,5 +1,6 @@
 #include <iostream>
 #include <fstream>
+#include <string>
 using namespace std;
 
 struct User
@@ -74,7 +75,7 @@ void manager_login()
         }
         file.close();
     }
-
+    void add_manager();
     if (loggedIn)
     {
         cout << "Login successful!" << endl;
@@ -102,7 +103,7 @@ void manager_login()
                     // Edit item 
                     break;
                 case 4:
-                    // Add new manager
+                    add_manager();
                     break;
                 case 0:
                     cout << "Exiting..." << endl;
@@ -117,5 +118,25 @@ void manager_login()
     {
         cout << "Login failed!" << endl;
     }
+}
 
+void add_manager()
+{
+    string newUsername, newPassword;
+    cout << "Enter new manager's username: ";
+    cin >> newUsername;
+    cout << "Enter new manager's password: ";
+    cin >> newPassword;
+
+    ofstream file("managers.txt", ios::app);
+    if (file.is_open())
+    {
+        file << newUsername << " " << newPassword << endl;
+        file.close();
+        cout << "New manager added successfully!" << endl;
+    }
+    else
+    {
+        cout << "Error opening file!" << endl;
+    }
 }

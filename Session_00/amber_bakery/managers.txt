@@ -1,2 +1,3 @@
 admin password123
-manager pass1234
+manager1 man1pass
+manager2 man2pass
