@@ -81,7 +81,7 @@ void manager_login()
         int choice;
         do
         {
-            cout << "Menu:" << endl;
+            cout << "Manager Menu:" << endl;
             cout << "1. Add Item" << endl;
             cout << "2. Remove Item" << endl;
             cout << "3. Edit Item" << endl;
