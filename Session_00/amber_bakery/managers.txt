@@ -1,3 +1,4 @@
 admin password123
 manager1 man1pass
 manager2 man2pass
+manager3 man3pass

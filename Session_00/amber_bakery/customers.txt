@@ -1,0 +1,4 @@
+ash 123
+customer1 cus1pass
+customer2 cus2pass
+customer3 cus3pass
